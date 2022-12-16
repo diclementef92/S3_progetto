@@ -235,27 +235,31 @@ const movies = [
 // /* ESERCIZIO 6
 //   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 // */
-// console.log("Es.6: isThisAnEmail: TODO");
+
+const isThisAnEmail = function (mail) {
+  return mail.includes("@") && (mail.includes(".it") || mail.includes(".com"));
+};
+console.log("Es.6: isThisAnEmail: ", isThisAnEmail("rabarabro@mail.com"));
 
 // /* ESERCIZIO 7
 //   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 // */
 
-// const whatDayIsIt = function () {
-//   const days = [
-//     "Lunedì",
-//     "Martedì",
-//     "Mercoledì",
-//     "Giovedì",
-//     "Venerdì",
-//     "Sabato",
-//     "Domenica",
-//   ];
-//   const today = new Date();
-//   return days[today.getDay() - 1];
-// };
+const whatDayIsIt = function () {
+  const days = [
+    "Domenica",
+    "Lunedì",
+    "Martedì",
+    "Mercoledì",
+    "Giovedì",
+    "Venerdì",
+    "Sabato",
+  ];
+  const today = new Date();
+  return days[today.getDay()];
+};
 
-// console.log("Es.7: whatDayIsIt:", whatDayIsIt());
+console.log("Es.7: whatDayIsIt:", whatDayIsIt());
 
 // /* ESERCIZIO 8
 //   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
@@ -393,29 +397,29 @@ const movies = [
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
-const searchByTitle = function (title) {
-  return movies.filter((movie) => {
-    let movieTitle = movie.Title.toLowerCase();
-    return movieTitle.includes(title.toLowerCase());
-  });
-};
-console.log("Es.16: searchByTitle", searchByTitle("avengers"));
+// const searchByTitle = function (title) {
+//   return movies.filter((movie) => {
+//     let movieTitle = movie.Title.toLowerCase();
+//     return movieTitle.includes(title.toLowerCase());
+//   });
+// };
+// console.log("Es.16: searchByTitle", searchByTitle("avengers"));
 
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
 */
-const searchAndDivide = function (title) {
-  let match = searchByTitle(title);
-  let unmatch = movies.filter((movie) => {
-    let movieTitle = movie.Title.toLowerCase();
-    return !movieTitle.includes(title.toLowerCase());
-  });
-  return { match, unmatch };
-};
-console.log("Es.16: searchAndDivide", searchAndDivide("avengers"));
+// const searchAndDivide = function (title) {
+//   let match = searchByTitle(title);
+//   let unmatch = movies.filter((movie) => {
+//     let movieTitle = movie.Title.toLowerCase();
+//     return !movieTitle.includes(title.toLowerCase());
+//   });
+//   return { match, unmatch };
+// };
+// console.log("Es.16: searchAndDivide", searchAndDivide("avengers"));
 /* ESERCIZIO 19
-  Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
+Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
@@ -423,12 +427,12 @@ console.log("Es.16: searchAndDivide", searchAndDivide("avengers"));
 /* ESERCIZIO 20
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
-document.querySelector("#container");
+// document.querySelector("#container");
 
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
-document.querySelector("div");
+// document.querySelector("div");
 
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
