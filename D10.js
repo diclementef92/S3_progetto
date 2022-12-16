@@ -236,30 +236,30 @@ const movies = [
 //   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 // */
 
-const isThisAnEmail = function (mail) {
-  return mail.includes("@") && (mail.includes(".it") || mail.includes(".com"));
-};
-console.log("Es.6: isThisAnEmail: ", isThisAnEmail("rabarabro@mail.com"));
+// const isThisAnEmail = function (mail) {
+//   return mail.includes("@") && (mail.includes(".it") || mail.includes(".com"));
+// };
+// console.log("Es.6: isThisAnEmail: ", isThisAnEmail("rabarabro@mail.com"));
 
 // /* ESERCIZIO 7
 //   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 // */
 
-const whatDayIsIt = function () {
-  const days = [
-    "Domenica",
-    "Lunedì",
-    "Martedì",
-    "Mercoledì",
-    "Giovedì",
-    "Venerdì",
-    "Sabato",
-  ];
-  const today = new Date();
-  return days[today.getDay()];
-};
+// const whatDayIsIt = function () {
+//   const days = [
+//     "Domenica",
+//     "Lunedì",
+//     "Martedì",
+//     "Mercoledì",
+//     "Giovedì",
+//     "Venerdì",
+//     "Sabato",
+//   ];
+//   const today = new Date();
+//   return days[today.getDay()];
+// };
 
-console.log("Es.7: whatDayIsIt:", whatDayIsIt());
+// console.log("Es.7: whatDayIsIt:", whatDayIsIt());
 
 // /* ESERCIZIO 8
 //   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
@@ -295,11 +295,8 @@ console.log("Es.7: whatDayIsIt:", whatDayIsIt());
 
 // const howManyDays = function (date) {
 //   const oggi = new Date();
-//   const diff = {};
-//   diff.years = oggi.getFullYear() - date.getFullYear();
-//   diff.months = oggi.getMonth() - date.getMonth();
-//   diff.days = oggi.getDate() - date.getDate();
-//   return diff;
+//   const diff = oggi.getTime() - date.getTime();
+//   return Math.floor(diff / 1000 / 60 / 60 / 24);
 // };
 // console.log("Es.8: howManyDays:", howManyDays(new Date(2021, 9 - 1, 10)));
 
@@ -421,6 +418,11 @@ console.log("Es.7: whatDayIsIt:", whatDayIsIt());
 /* ESERCIZIO 19
 Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
+// const removeIndex = function (index) {
+//   movies.splice(index, 1);
+//   return movies;
+// };
+// console.log("Es.19: removeIndex", removeIndex(1));
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
