@@ -526,8 +526,9 @@ const halfTree = function (n) {
 const tree = function (n) {
   let rowArray = [];
   // array[' ', ' ', '*'];
-  // array[' ',  *,   *]
+  // array[' ',  *,  *]
   // array[*,*,*]
+  // num degli asterischi = numero riga * 2 +1
   for (let row = 0; row < n; row++) {
     for (let spaces = n - row - 1; spaces > 0; spaces--) {
       rowArray.push(" ");
@@ -536,7 +537,7 @@ const tree = function (n) {
       rowArray.push("*");
     }
     console.log(...rowArray);
-    rowArray = [];
+    rowArray = []; //svuoto array
   }
 };
 
