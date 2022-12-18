@@ -439,22 +439,54 @@ Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
+// const printTable = function () {
+//   let tableData = document.querySelectorAll("td");
+//   tableData.forEach((td) => {
+//     console.log(td.innerText);
+//   });
+// };
+// console.log("Es.22: printTable", printTable());
 
-/* ESERCIZIO 23
-  Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
-*/
+// /* ESERCIZIO 23
+//   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
+// */
+// const backgroundLinksRed = function () {
+//   const links = document.querySelectorAll("a");
+//   links.forEach((link) => {
+//     link.style = "background-color: red;";
+//   });
+// };
+// console.log("Es.22: backgroundLinksRed", backgroundLinksRed());
 
-/* ESERCIZIO 24
-  Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
-*/
+// /* ESERCIZIO 24
+//   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
+// */
+// const addListElementById = function (id, elementText) {
+//   const htmlList = document.querySelector("#" + id);
+//   const li = document.createElement("li");
+//   li.textContent = elementText;
+//   htmlList.appendChild(li);
+// };
+// console.log(
+//   "Es.23: addListElementById",
+//   addListElementById("myList", "parmigiano")
+// );
 
-/* ESERCIZIO 25
-  Scrivi una funzione per svuotare la lista non ordinata con id "myList".
-*/
+// /* ESERCIZIO 25
+//   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
+// */
+// const emptyListById = function (id) {
+//   const htmlListItems = document.querySelector("#" + id).querySelectorAll("li");
+//   htmlListItems.forEach((li) => li.remove());
+// };
 
-/* ESERCIZIO 26
-  Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
-*/
+// /* ESERCIZIO 26
+//   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
+// */
+// const addClassTest = function () {
+//   const tableRows = document.querySelectorAll("tr");
+//   tableRows.forEach((tr) => tr.classList.add("test"));
+// };
 
 // [EXTRA] JS Avanzato
 
@@ -469,7 +501,17 @@ Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e
   ***
 
 */
-
+const halfTree = function (n) {
+  let row = [];
+  for (let i = 0; i < n; i++) {
+    // array [*];
+    // array[*,*]
+    // array[*,*,*]
+    row.push("*");
+    console.log(...row);
+  }
+};
+// halfTree(10);
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
 
@@ -481,7 +523,34 @@ Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e
   *****
 
 */
+const tree = function (n) {
+  let rowArray = [];
+  // array[' ', ' ', '*'];
+  // array[' ',  *,   *]
+  // array[*,*,*]
+  for (let row = 0; row < n; row++) {
+    for (let spaces = n - row - 1; spaces > 0; spaces--) {
+      rowArray.push(" ");
+    }
+    for (let i = 0; i <= row * 2; i++) {
+      rowArray.push("*");
+    }
+    console.log(...rowArray);
+    rowArray = [];
+  }
+};
 
+tree(10);
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
+const isItPrime = function (n) {
+  // divido per tutti i num da 2 a rad(n)
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
+console.log("Es.29: isItPrime", isItPrime(11));
